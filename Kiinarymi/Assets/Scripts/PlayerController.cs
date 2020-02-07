@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public Transform Cannon;
-    public GameObject BulletPrefab;
+    public Transform cannon;
+    public GameObject bulletPrefab;
     public float fireRate = 0.5f;
     public float nextFire = 0.0f;
     // Start is called before the first frame update
@@ -23,11 +23,8 @@ public class PlayerController : MonoBehaviour
             Shoot();
         }
     }
-    private void Shoot()
+    void Shoot()
     {
-        var bullet = Instantiate(BulletPrefab);
-        bullet.transform.rotation = transform.rotation;
-        bullet.transform.position = transform.position + transform.up;
-        Debug.Log("Fired");
+        Instantiate(bulletPrefab, cannon.position, cannon.rotation);
     }
 }
