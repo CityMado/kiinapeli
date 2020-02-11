@@ -23,7 +23,7 @@ public class Bullet : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "WeakSpot")
         {
             var enemyH = collision.gameObject.GetComponent<EnemyController>();
             enemyH.enemyHealth -= damage;
